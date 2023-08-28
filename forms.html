@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+<body>
+    file:///C:/tacos?username=gokce&pasword=gokce06&color=%23c62424&num=2
+    <h1>FORMS DEMO</h1>
+    <button>OUTSIDE FORM!</button><br>
+    <!--form'un içinde olunca buttonlar bizi actionu eşitlediğimiz yere gönderiyor 
+    fakat dışardaysa button hiç bir yere göndermiyor.-->
+    <!--bunu formun için de de type="button"şeklinde yaparak sadece button
+         görevi görmesini sağlayabilirsin -->
+    <form action="/tacos">
+        <button type="button">PLEASE DO NOT SUBMİT THE FORM(type="button")</button><br>
+        <button type="submit">PLEASE DO NOT SUBMİT THE FORM(type="submit")</button><br>
+        <label for="username">Enter a Username: </label>
+        <input id="username" type="text" placeholder="username" name="username"> <br>
+
+        <label for="pasword">Enter a Pasword: </label>
+        <input id=pasword type="password"placeholder="password" name="pasword"><br>
+
+        <button>IN THE MIDDLE!</button><br>
+
+        <label for="color">Enter a color:</label>
+        <input id="color" type="color" name="color"><br>
+
+        <label for="number">Enter a number:</label>
+        <input id="number" type="number"placeholder="enter a number" name="num"><br>
+        <!--<label>etiketi atmanın diğer yolu-->
+
+        <label>
+            Enter a Number:
+            <input type="number" placeholder="enter a number" name="num" max="100" min="10" step="2">
+        </label><br>
+        <button>Submit!!!</button><br>
+        <label>
+            Enter a Username:
+            <input type="text" placeholder="username">
+        </label><br>
+        <!--ikiside aynı şekilde gözüküyor ama input olan 
+            girdi alıyor yani kapanış etiketi yok ,o yüzden çok güzel değil-->
+        <button>Submit!!!</button><br>
+        <input type="submit" value="Submit!!!">
+        <!--input olanda value etiketi kullanarak yazılanı değiştirebilirsin.-->
+    </form>
+    <hr>
+    <h2>Hijacking Searches</h2>
+    <h3>Search Reddit</h3>
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <button>Search Reddit</button>
+    </form>
+    <h3>Search Google</h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+    <h3>Search Youtube</h3>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <!--<button>Search Youtube</button>-->
+    </form><br>
+    <form action="/birds">
+        <input type="checkbox" name="agree_tos" id="agree">
+        <label for="agree">I agree to everything</label>
+        <p>
+            <label for="xs">Gökçe</label>
+            <input type="radio" name="size" id="xs" value="Gökçe">
+            <label for="s">Nur</label>
+            <input type="radio" name="size" id="s" value="Nur">
+            <label for="m">Yılmaz</label>
+            <input type="radio" name="size" id="m" value="Yılmaz">
+        </p>
+        <p>
+            <label for="meal">Please Select an Entree</label>
+            <select name="meal" id="meat">
+                <option value="fish">Fish</option>
+                <option value="veg" >Vegetarian</option>
+                <option value="steak">Steak</option>
+            </select>
+        </p>
+        <p>
+            <label for="cheese">Amout of Cheese</label>
+            <input type="range" id="cheese" min="1" max="100" value="75" step="7" name="cheese_level">
+        </p>
+        <!--id labele bağlıyor
+        min başlangıç değeri
+        max son değer
+        value başlamasını istediğimiz değer
+        step kaçar kaçar gideceğini gösteriyor
+        name tarayıcıdaki adı-->
+        <p>
+            <label for="requests">Any Special Requests?</label><br>
+            <textarea id="requests" rows="10" cols="40" name="Requests?" placeholder="Type something here"></textarea>
+        </p>
+        <button>Submit</button>
+    </form>
+    <h2>Validations Demo</h2>
+    <form action="/dummy">
+        <label for="first">First:</label>
+        <input type="text" name="first_name" id="first" required >
+        <p>
+            <label for="username">  Username:</label>
+            <input type="text" name="username" id="username" required minlength="5" maxlength="15">
+        </p>
+        <p>
+            <input type="email">
+            <input type="url">
+        </p>
+        <button>Submit</button>
+    </form>
+    <!--required boş bırakılmasına izin vermiyor
+    minlength en kısa uzunluk şu kadar olmalı diyor
+    maxlength en uzun uzunluk şu kadar olmalı diyor
+    type url yapınca "https:"" istiyor
+    type email yapınca "@"" istiyor
+    -->
+</body>
+</html>
